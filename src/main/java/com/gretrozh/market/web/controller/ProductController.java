@@ -2,6 +2,7 @@ package com.gretrozh.market.web.controller;
 
 import com.gretrozh.market.domain.Product;
 import com.gretrozh.market.domain.service.ProductService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("")
+    @ApiOperation("Get all supermerkat products")
     public ResponseEntity<List<Product>> getAll(){
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
